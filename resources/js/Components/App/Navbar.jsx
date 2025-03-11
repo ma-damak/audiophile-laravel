@@ -19,37 +19,12 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block">
               <div className="flex items-baseline ml-10 space-x-4">
-                <a
-                  href="#"
-                  className="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md"
-                  aria-current="page"
-                >
-                  Dashboard
-                </a>
-                <a
-                  href="#"
+                <Link
+                  href="/"
                   className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
                 >
-                  Team
-                </a>
-                <a
-                  href="#"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-                >
-                  Calendar
-                </a>
-                <a
-                  href="#"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
-                >
-                  Reports
-                </a>
+                  Home
+                </Link>
               </div>
             </div>
           </div>

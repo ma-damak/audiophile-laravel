@@ -1,18 +1,8 @@
+import ProductItem from "@/Components/App/ProductItem";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
-  const handleImageError = () => {
-    document
-      .getElementById("screenshot-container")
-      ?.classNameList.add("!hidden");
-    document.getElementById("docs-card")?.classNameList.add("!row-span-1");
-    document
-      .getElementById("docs-card-content")
-      ?.classNameList.add("!flex-row");
-    document.getElementById("background")?.classNameList.add("!hidden");
-  };
-
+export default function Welcome({ products }) {
   return (
     <AuthenticatedLayout>
       <Head title="Welcome" />
@@ -71,6 +61,17 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             }}
             className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
           />
+        </div>
+      </div>
+      <div className="bg-white">
+        <div className="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h2 className="sr-only">Products</h2>
+
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            {products.data.map((product) => (
+              <ProductItem product={product} key={product.id} />
+            ))}
+          </div>
         </div>
       </div>
     </AuthenticatedLayout>
